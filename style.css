@@ -1,0 +1,85 @@
+body {
+    padding:20px;
+    background-color: #fafafa;
+}
+ul {
+	list-style-type: none;
+}
+.folder {
+    top: -3px;
+    position: relative;
+}
+.d-none {
+	display: none;
+}
+.open-dropdown,
+.download,
+.save,
+.edit,
+.delete {
+	cursor: pointer;
+}
+.save,
+li input[type=text] {
+	display: none;
+}
+.delete {
+    width:13px;
+}
+.img img {
+    border-radius: 20%;
+    cursor: pointer;
+}
+.nav {
+    margin-bottom:20px;
+}
+.showModalVideos {
+    cursor: pointer;
+    text-decoration: underline;
+}
+#modal_table {
+    width: 100% !important;
+}
+
+.modal-dialog {
+    max-width: max-content;
+}
+.newfile {
+	color: transparent;
+}
+.spinner-border {
+    display: none;
+}
+li .spinner-border {
+    width: 13px;
+    height: 13px;
+    border: 2px solid currentColor;
+    border-right-color: transparent;
+}
+.none {
+    display: none;
+}
+.plus {
+    background-color: #9CEC5B;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 45px;
+    font-size: 30px;
+    padding-bottom: 50px;
+    color: #fafafa;
+    position: fixed;
+    bottom: 32px;
+    right: 36px;
+    box-shadow: 0px 0px 10px 10px rgba(121,121,121,.25);
+}
+.plus:hover {
+    animation:spin .5s linear infinite;
+}
+
+@keyframes spin { 
+    100% { 
+        -webkit-transform: rotate(360deg); 
+        transform:rotate(360deg); 
+    } 
+}
