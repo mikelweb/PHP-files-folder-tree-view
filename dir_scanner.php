@@ -1,8 +1,10 @@
 <?php
+// Show PHP errors to debug
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+// if we are editing folder name
 if(isset($_POST['oldName']) && isset($_POST['newName']))
 {
     exec("mv ".escapeshellarg($_POST['oldName'])." ".escapeshellarg($_POST['newName']), $output);
@@ -10,6 +12,7 @@ if(isset($_POST['oldName']) && isset($_POST['newName']))
 	exit();
 }
 
+// if we are deleting a file
 if(isset($_POST['deleteFile']))
 {
     exec("rm ".escapeshellarg($_POST['deleteFile']), $output);
@@ -17,6 +20,8 @@ if(isset($_POST['deleteFile']))
 	exit();
 }
 
+// if we are cerating a folder
+// change path and give permissions
 if(isset($_POST['newdirectory']))
 {
     $nombreCarpeta = $_POST['newdirectory'];
@@ -30,7 +35,7 @@ if(isset($_POST['newdirectory']))
 	exit();
 }
 
-
+// get file list and iterate over it
 function listadoDirectorio($directorio){
     $listado = scandir($directorio);
     unset($listado[array_search('.', $listado, true)]);
